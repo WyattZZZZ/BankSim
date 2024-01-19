@@ -46,6 +46,6 @@ class Bank:
         else:
             await target.remittance_in(user, amount)
 
-    def remittance_in(self, user, amount):
+    async def remittance_in(self, user, amount):
         self.deposit_node.fund[user] += amount
 
