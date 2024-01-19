@@ -14,7 +14,7 @@ class Deposit:
         self.fund = {}
         self.total_funding = sum(list(self.fund.values()))
 
-    def date_update(self, date):
+    async def date_update(self, date):
         self.time += date
         for keys in self.fund:
             value = self.fund.get(keys)
@@ -24,7 +24,7 @@ class Deposit:
                 self.fund[keys] = value * (1 + self.interest_rate)
         self.total_funding = sum(list(self.fund.values()))
 
-    def fund_update(self, name: str, amount: float):
+    async def fund_update(self, name: str, amount: float):
         if self.fixed:
             if not name in self.fund.keys():
                 self.fund.update({name: amount})
