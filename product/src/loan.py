@@ -16,7 +16,7 @@ class Loan:
         self.loan = {}
         self.total_loan = sum(list(self.loan.values()))
 
-    async def date_update(self, date):
+    def date_update(self, date):
         self.time += date
         for keys in self.loan:
             value = self.loan.get(keys)
@@ -26,7 +26,7 @@ class Loan:
                 self.loan[keys] = value * (1 + self.interest_rate)
         self.total_loan = sum(list(self.loan.values()))
 
-    async def loan_update(self, name: str, amount: float):
+    def loan_update(self, name: str, amount: float):
         if self.fixed:
             if not name in self.loan.keys():
                 self.loan.update({name: amount})
