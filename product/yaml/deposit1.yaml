@@ -1,0 +1,5 @@
+interest_rate: 0.03
+term: 5
+min_amount: 100
+max_amount: 10000
+fixed: True
